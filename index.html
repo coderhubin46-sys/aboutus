@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | Femttoss</title>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&family=Nunito+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        /* BRAND COLOR PALETTE */
+        :root {
+            --primary-blue: #06B6D4; /* Brand Blue */
+            --dark-gray: #1F2937;    /* Dark Accent */
+            --slate-text: #64748B;   /* Body text gray */
+            --pure-white: #ffffff;
+            --font-heading: 'Montserrat', sans-serif;
+            --font-body: 'Nunito Sans', sans-serif;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: var(--font-body); background-color: var(--pure-white); color: var(--dark-gray); line-height: 1.6; }
+
+        /* --- 1. HERO SECTION (GLASSMORPHISM) --- */
+        .hero {
+            height: 450px;
+            background: linear-gradient(rgba(6, 182, 212, 0.1), rgba(6, 182, 212, 0.1)), 
+                        url('https://images.unsplash.com/photo-1541675154750-0444c7d51e8e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1500&q=80');
+            background-size: cover; background-position: center;
+            display: flex; align-items: center; justify-content: center; position: relative;
+        }
+        .hero-glass {
+            background: rgba(255, 255, 255, 0.07);
+            backdrop-filter: blur(1.9px); -webkit-backdrop-filter: blur(1.9px);
+            border: 1px solid rgba(255, 255, 255, 0.29);
+            border-radius: 16px; padding: 60px 100px;
+            text-align: center; box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        }
+        .hero-glass h1 { font-family: var(--font-heading); font-size: 50px; color: var(--pure-white); letter-spacing: -1px; }
+
+        /* --- 2. MISSION SECTION (NEW) --- */
+        .mission-section {
+            padding: 100px 10%;
+            text-align: center;
+            background-color: var(--pure-white);
+        }
+        .mission-section h2 {
+            font-family: var(--font-heading);
+            font-size: 32px;
+            margin-bottom: 25px;
+            text-transform: uppercase;
+            color: var(--dark-gray);
+        }
+        .mission-section p {
+            max-width: 900px;
+            margin: 0 auto;
+            color: var(--slate-text);
+            font-size: 18px;
+            line-height: 1.8;
+        }
+
+        /* --- 3. HOW IT STARTED SECTION --- */
+        .story-section { padding: 80px 10%; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+        .story-text span { color: var(--primary-blue); font-weight: 800; text-transform: uppercase; letter-spacing: 2px; font-size: 13px; }
+        .story-text h2 { font-family: var(--font-heading); font-size: 36px; margin: 15px 0; line-height: 1.2; }
+        .story-text p { color: var(--slate-text); margin-bottom: 20px; font-size: 16px; }
+        .story-img img { width: 100%; border-radius: 20px; box-shadow: 0 20px 40px rgba(0,0,0,0.05); }
+
+        /* --- 4. WHAT WE STAND FOR SECTION --- */
+        .stand-section { padding: 100px 10%; background-color: #f8fafc; text-align: center; }
+        .stand-section h2 { font-family: var(--font-heading); margin-bottom: 60px; font-size: 32px; }
+        .stand-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; }
+        .stand-card { padding: 40px; background: white; border-radius: 20px; transition: 0.3s; }
+        .stand-card:hover { transform: translateY(-10px); box-shadow: 0 20px 40px rgba(6, 182, 212, 0.1); }
+        .stand-card h3 { font-family: var(--font-heading); color: var(--primary-blue); margin-bottom: 15px; font-size: 20px; }
+        .stand-card p { font-size: 14px; color: var(--slate-text); }
+
+        /* --- 5. FOOTER (4-COLUMN + NEWSLETTER) --- */
+        footer { background-color: var(--primary-blue); padding: 80px 10% 40px; color: var(--pure-white); }
+        .footer-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 40px; margin-bottom: 60px; }
+        .footer-logo { font-family: var(--font-heading); font-size: 32px; font-weight: 900; margin-bottom: 15px; display: block; }
+        .footer-col h4 { font-family: var(--font-heading); margin-bottom: 25px; font-size: 18px; }
+        .footer-col ul { list-style: none; }
+        .footer-col li { margin-bottom: 12px; }
+        .footer-col a { color: rgba(255, 255, 255, 0.9); text-decoration: none; font-size: 14px; transition: 0.3s; }
+        .footer-col a:hover { padding-left: 5px; color: white; }
+
+        .newsletter-section { border-top: 1px solid rgba(255, 255, 255, 0.2); padding-top: 50px; text-align: center; }
+        .newsletter-section h3 { font-family: var(--font-heading); font-size: 22px; margin-bottom: 25px; }
+        .input-group { display: flex; max-width: 500px; margin: 0 auto; background: white; padding: 5px; border-radius: 8px; }
+        .input-group input { border: none; padding: 12px; flex: 1; outline: none; font-family: var(--font-body); }
+        .input-group button { background: var(--dark-gray); color: white; border: none; padding: 0 25px; border-radius: 6px; font-weight: 700; cursor: pointer; }
+
+        /* --- RESPONSIVE --- */
+        @media (max-width: 1024px) {
+            .story-section, .stand-grid, .footer-grid, .mission-section { grid-template-columns: 1fr; text-align: center; }
+            .hero-glass { padding: 40px; }
+            .mission-section p { font-size: 16px; }
+        }
+        @media (max-width: 600px) {
+            .input-group { flex-direction: column; background: transparent; gap: 10px; }
+            .input-group input { border-radius: 8px; }
+            .hero-glass h1 { font-size: 35px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-glass">
+            <h1>About us</h1>
+        </div>
+    </section>
+
+    <!-- MISSION SECTION -->
+    <section class="mission-section">
+        <h2>A menstrual solution for all</h2>
+        <p>
+            We believe that period care shouldn't be a source of anxiety or environmental waste. Our 
+            mission is to provide high-performance, skin-safe, and sustainable alternatives that empower 
+            every woman to live her life without interruptions. Through rigorous testing and thoughtful 
+            design, we've created the period care you actually deserve.
+        </p>
+    </section>
+
+    <!-- STORY -->
+    <section class="story-section">
+        <div class="story-text">
+            <span>How it started</span>
+            <h2>Born out of real frustration</h2>
+            <p>It began with a simple question: why are we still using products that haven't fundamentally changed in decades? Products that leak, cause rashes, and fill up landfills.</p>
+            <p>Today, we aren't just selling a product; we're leading a movement toward conscious, comfortable, and chemical-free menstruation.</p>
+        </div>
+        <div class="story-img">
+            <img src="https://images.unsplash.com/photo-1434039311785-69722377f3e1?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Founder Story">
+        </div>
+    </section>
+
+    <!-- STAND FOR -->
+    <section class="stand-section">
+        <h2>What we stand for</h2>
+        <div class="stand-grid">
+            <div class="stand-card">
+                <h3>Save mother's womb</h3>
+                <p>Prioritizing reproductive health with chemical-free and toxin-free materials.</p>
+            </div>
+            <div class="stand-card">
+                <h3>Save mother earth</h3>
+                <p>Reducing environmental footprint with sustainable, reusable alternatives.</p>
+            </div>
+            <div class="stand-card">
+                <h3>Sewage problem</h3>
+                <p>Addressing the global waste crisis by eliminating non-biodegradable waste.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-col">
+                <span class="footer-logo">femttoss</span>
+                <p style="font-size: 14px; opacity: 0.9;">Revolutionizing period care for a sustainable and comfortable future.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Menu</h4>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About us</a></li>
+                    <li><a href="#">Shop</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Information</h4>
+                <ul>
+                    <li><a href="#">Shipping & payments</a></li>
+                    <li><a href="#">Terms & conditions</a></li>
+                    <li><a href="#">Privacy policy</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Contact us</h4>
+                <ul>
+                    <li>Call: +91 91843 74372</li>
+                    <li>Mail: reachus@femttoss.com</li>
+                    <li>Instagram: @femttoss</li>
+                </ul>
+            </div>
+        </div>
+        <div class="newsletter-section">
+            <h3>Sign up for exclusive offers, period tips & new launches</h3>
+            <div class="input-group">
+                <input type="email" placeholder="Enter your email address">
+                <button>Subscribe</button>
+            </div>
+        </div>
+        <div style="text-align: center; margin-top: 40px; font-size: 12px; opacity: 0.6;">&copy; 2025 Femttoss India. All rights reserved.</div>
+    </footer>
+
+</body>
+</html>
