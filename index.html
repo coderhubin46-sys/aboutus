@@ -189,6 +189,107 @@
         </div>
     </section>
 
+    <!-- Minimal SEO Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Femttoss",
+  "description": "Where thoughtful innovation meets effortless comfort, giving every woman the freedom to move, live, and feel confident through every cycle."
+}
+</script>
+
+<section class="minimal-brand-quote">
+    <div class="container">
+        <!-- Minimalist Identifier -->
+        <span class="eyebrow">Philosophy</span>
+
+        <p class="quote-body">
+            <span class="brand">FEMTTOSS</span> where thoughtful innovation meets effortless comfort, giving every woman the freedom to move, live, and feel confident through every cycle.
+        </p>
+
+        <!-- Single clean design accent -->
+        <div class="dot-accent"></div>
+    </div>
+</section>
+
+<style>
+    /* 
+       DESIGN PRINCIPLES:
+       - Background: Pure White (#FFFFFF)
+       - Font: Montserrat (Clean & Geometric)
+       - Primary Accent: #06B6D4 (Cyan)
+       - Primary Text: #1F2937 (Deep Gray)
+    */
+
+    .minimal-brand-quote {
+        background-color: #ffffff;
+        padding: 160px 10%; /* High white space for luxury feel */
+        text-align: center;
+        display: flex;
+        justify-content: center;
+    }
+
+    .container {
+        max-width: 900px;
+        width: 100%;
+    }
+
+    .eyebrow {
+        font-family: 'Montserrat', sans-serif;
+        font-size: 12px;
+        text-transform: uppercase;
+        letter-spacing: 4px;
+        color: #64748B; /* Slate gray Lead-in */
+        display: block;
+        margin-bottom: 40px;
+    }
+
+    .quote-body {
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 500; /* Medium weight for a clean look */
+        font-size: clamp(1.4rem, 3vw, 2.2rem); /* Fluid and modern */
+        line-height: 1.6;
+        color: #1F2937;
+        margin: 0;
+        letter-spacing: -0.02em;
+    }
+
+    .brand {
+        color: #06B6D4; /* Brand Cyan */
+        font-weight: 800;
+        letter-spacing: 1px;
+    }
+
+    .dot-accent {
+        width: 6px;
+        height: 6px;
+        background-color: #06B6D4;
+        border-radius: 50%;
+        margin: 50px auto 0;
+    }
+
+    /* Clean fade-in for professional polish */
+    .container {
+        animation: simpleFade 1.5s ease-out;
+    }
+
+    @keyframes simpleFade {
+        from { opacity: 0; }
+        to { opacity: 1; }
+    }
+
+    /* Mobile optimization */
+    @media (max-width: 768px) {
+        .minimal-brand-quote {
+            padding: 100px 8%;
+        }
+        .quote-body {
+            font-size: 1.5rem;
+        }
+    }
+</style>
+
     <!-- FAQ SECTION -->
     <section class="faq-section">
         <h2>Common Questions</h2>
