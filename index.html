@@ -255,6 +255,21 @@
         animation-delay: 0.2s;
     }
 
+    /* HOVER EFFECT: Vision & Mission */
+    .pillar-title,
+    .pillar-body {
+        transition: transform 0.35s ease, color 0.35s ease;
+    }
+
+    .pillar:hover .pillar-title {
+        transform: translateY(-6px);
+    }
+
+    .pillar:hover .pillar-body {
+        color: #1F2937;
+        transform: translateY(-4px);
+    }
+
     @keyframes revealPillar {
         to {
             opacity: 1;
